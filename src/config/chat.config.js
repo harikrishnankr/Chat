@@ -1,2 +1,2 @@
-export const ENDPOINT = "https://serene-spire-68164.herokuapp.com/";
+export const ENDPOINT = "https://clack-chat-app.herokuapp.com/";
 export const SEND_MESSAGE = 'send_message';
