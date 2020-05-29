@@ -8,6 +8,7 @@ module.exports = merge(common, {
         port: 9000,
         watchContentBase: true,
         progress: true,
-        historyApiFallback: true
+        historyApiFallback: true,
+        host: '0.0.0.0'
     }
 });

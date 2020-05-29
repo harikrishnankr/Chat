@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import loadable from '@loadable/component';
+
+const AsyncLogin = loadable(() => import(`./components/auth/login.jsx`));
+const AsyncSignUp = loadable(() => import(`./components/auth/sign-up.jsx`));
+const AsyncChat = loadable(() => import(`./components/chat`));
+const AsyncVideoConf = loadable(() => import(`./components/video`));
 
 const demoAsyncCall = () => {
     return new Promise((resolve) => setTimeout(() => resolve(), 1000));
@@ -23,11 +29,11 @@ class App extends Component {
 
         return (
             <Switch>
-                {/* <Route exact path="/" component={Login} />
-                <Route path="/login" component={Login} />
-                <Route path="/sign-up" component={SignUp} />
-                <Route path="/chat" component={Chat}/> */}
-                <div>This is the app</div>
+                <Route exact path="/" component={AsyncLogin} />
+                <Route path="/login" component={AsyncLogin} />
+                <Route path="/sign-up" component={AsyncSignUp} />
+                <Route path="/chat" component={AsyncChat}/>
+                <Route path="/video-conf" component={AsyncVideoConf}/>
             </Switch>
         );
     }
