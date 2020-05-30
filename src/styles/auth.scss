@@ -1,0 +1,30 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items:center;
+    min-height: 100vh;
+    .logo {
+        height: 90px;
+        width: 90px;
+        background: url('../../assets/images/chat-logo.png') no-repeat center;
+        margin: 0 auto;
+        background-size: 100%;
+    }
+    .form-wrapper {
+        width: 300px;
+        text-align: center;
+        .sign-in-form {
+			h2 {
+				text-align: center;
+			}
+
+			.button-group {
+				display: flex;
+			    justify-content: center;
+			    button {
+			    	width: 100%;
+			    }
+			}
+		}
+    }
+}

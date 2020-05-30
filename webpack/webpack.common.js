@@ -9,10 +9,14 @@ module.exports = {
     },
     resolve: {
         alias: {
-            // '@HttpClient': path.resolve('./src/core/services/http-client.service.js'),
-            // '@Core': path.resolve('./src/core/'),
-            // '@Pages': path.resolve('./src/pages/'),
-            // '@Shared': path.resolve('./src/shared/')
+            '@HttpClient': path.resolve('./src/services/http.service.js'),
+            '@Core': path.resolve('./src/core/'),
+            '@Components': path.resolve('./src/components/'),
+            '@Shared': path.resolve('./src/shared/'),
+            '@Helper': path.resolve('./src/helper/'),
+            '@Redux': path.resolve('./src/redux/'),
+            '@Config': path.resolve('./src/config/'),
+            '@Styles': path.resolve('./src/styles/')
         },
         extensions: ['.js', '.jsx', '.scss']
     },

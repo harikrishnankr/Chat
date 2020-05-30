@@ -1,0 +1,40 @@
+@import "./variables";
+
+.c-button {
+    height: 36px;
+    background: $white;
+    border: 1px solid $primary;
+    border-radius: 4px;
+    color: $primary;
+    display: inline-block;
+    margin: 10px;
+    outline: none;
+    cursor: pointer;
+    min-width: 36px;
+
+    &.gray {
+        border-color: $gray;
+        color: $button-bg-gray;
+        background: $background-gray;
+    }
+
+    &.primary {
+    	background: $primary;
+    	color: $white;
+    }
+
+    &.success {
+    	border: 1px solid $success;
+    	color: $success;
+    }
+
+    &.error {
+    	border: 1px solid $error;
+    	color: $error;
+    }
+
+    &.warning {
+    	border: 1px solid $warning;
+    	color: $warning;
+    }
+}

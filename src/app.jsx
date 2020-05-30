@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import loadable from '@loadable/component';
 
-const AsyncLogin = loadable(() => import(`./components/auth/login.jsx`));
-const AsyncSignUp = loadable(() => import(`./components/auth/sign-up.jsx`));
-const AsyncChat = loadable(() => import(`./components/chat`));
-const AsyncVideoConf = loadable(() => import(`./components/video`));
+const AsyncLogin = loadable(() => import(`@Components/auth/login.jsx`));
+const AsyncSignUp = loadable(() => import(`@Components/auth/sign-up.jsx`));
+const AsyncChat = loadable(() => import(`@Components/chat`));
+const AsyncVideoConf = loadable(() => import(`@Components/video`));
 
 const demoAsyncCall = () => {
     return new Promise((resolve) => setTimeout(() => resolve(), 1000));
