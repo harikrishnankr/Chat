@@ -8,7 +8,7 @@ const AsyncChat = loadable(() => import(`@Components/chat`));
 const AsyncVideoConf = loadable(() => import(`@Components/video`));
 
 const demoAsyncCall = () => {
-    return new Promise((resolve) => setTimeout(() => resolve(), 1000));
+    return new Promise((resolve) => setTimeout(() => resolve(), 200));
 }
 
 class App extends Component {
