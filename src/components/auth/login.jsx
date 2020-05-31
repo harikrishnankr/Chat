@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from 'react-router-dom';
 
-import Input from "@Core/input.jsx";
+import Input from "@Core/input";
 import Http from "@HttpClient";
 import {
     object, string
@@ -22,8 +22,8 @@ class Login extends Component {
         }
         this.goToSignUp = this.goToSignUp.bind(this);
         this.schema = object().shape({
-            username: string().required('Enter an email or username'),
-            password: string().required('Enter a password')
+            username: string().required('Enter email or username'),
+            password: string().required('Enter the password')
         });
     }
 
@@ -33,7 +33,15 @@ class Login extends Component {
         });
     }
 
+    clearErrorMessages() {
+        this.setState({
+            ...this.state,
+            errorMessages: {}
+        })
+    }
+
     validate() {
+        this.clearErrorMessages();
         return this.schema.validate({
             username: this.username.value,
             password: this.password.value
@@ -47,7 +55,7 @@ class Login extends Component {
             this.setState({
                 ...this.state,
                 errorMessages: errors
-            })
+            });
         });
     }
 

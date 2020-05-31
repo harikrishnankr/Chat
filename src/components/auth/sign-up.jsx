@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from 'react-router-dom';
 
-import Input from "@Core/input.jsx";
+import Input from "@Core/input";
 import Http from "@HttpClient";
 import {
     object, string
@@ -29,9 +29,9 @@ class SignUp extends Component {
         this.schema = object().shape({
             username: string(),
             email: string(),
-            firstName: string().required('Enter a first name'),
-            lastName: string().required('Enter a last name'),
-            password: string().required('Enter a password'),
+            firstName: string().required('Enter the first name'),
+            lastName: string().required('Enter the last name'),
+            password: string().required('Enter the password'),
             confirmPwd: string().required('Confirm password is mandatory')
         });
     }
@@ -52,14 +52,22 @@ class SignUp extends Component {
         };
     }
 
+    clearErrorMessages() {
+        this.setState({
+            ...this.state,
+            errorMessages: {}
+        })
+    }
+
     validate(model) {
+        this.clearErrorMessages();
         return this.schema.validate({
             ...model
         }, {
             abortEarly: false
         }).catch((err) => {
             const errors = {
-                username: (!model.username || !model.email) ? 'Enter email/username' : ''
+                username: (!model.username || !model.email) ? 'Enter email/username mandatory' : ''
             };
             err.inner.forEach(field => {
                 errors[field.path] = field.message;
@@ -160,7 +168,7 @@ class SignUp extends Component {
                             </div>
                             <div className="button-group">
                                 <button className="c-button" type="button" onClick={() => this.goToLogin() }>
-                                    Don't have an account?
+                                    Already have an account?
                                 </button>
                             </div>
                         </form>
